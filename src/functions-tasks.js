@@ -111,7 +111,7 @@ function memoize(func) {
   let called = false;
   let result;
 
-  return function () {
+  return function call() {
     if (!called) {
       result = func();
       called = true;
@@ -180,7 +180,7 @@ function logger(/* func, logFunc */) {
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
 function partialUsingArguments(fn, ...args1) {
-  return function (...args2) {
+  return function partial(...args2) {
     return fn(...args1, ...args2);
   };
 }
